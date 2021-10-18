@@ -41,6 +41,10 @@ img {
   clip: rect(0 0 0 0);
 }
 
+html {
+  height: 100%;
+}
+
 html,
 body {
   width: 100%;
@@ -50,6 +54,9 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -63,6 +70,9 @@ body {
 }
 
 .cite-navigation {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
   font-family: "PT Sans", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -76,6 +86,10 @@ body {
   margin: 0 auto;
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .intro {
@@ -111,6 +125,14 @@ body {
   color: #000000;
   background-color: #ffffff;
 }
+
+.reason-card {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 
 .reason-title {
   color: inherit;
@@ -154,6 +176,13 @@ body {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+}
+
+.reason-list {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .reason-list-item:nth-child(1),
