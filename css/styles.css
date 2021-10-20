@@ -1,17 +1,19 @@
 @font-face {
-  font-family: "PT Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/ptsans-400.woff2") format("woff2");
+  font-family: "PT Sans";
+
   font-display: swap;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "PT Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-family: "PT Sans";
+
   font-display: swap;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
 }
 
 *,
@@ -41,6 +43,10 @@ img {
   clip: rect(0 0 0 0);
 }
 
+html {
+  height: 100%;
+}
+
 html,
 body {
   width: 100%;
@@ -50,32 +56,69 @@ body {
 }
 
 body {
-  font-family: "PT Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
   font-size: 18px;
   line-height: 21px;
+  font-family: "PT Sans", "Arial", sans-serif;
   color: #333333;
+
   background-color: #f2f2f2;
 }
 
+.logo-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
 .page-header {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  padding: 10px;
+
   color: #000000;
+
   background-color: #ffffff;
 }
 
 .cite-navigation {
-  font-family: "PT Sans", sans-serif;
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
+  font-family: "PT Sans", sans-serif;
   color: #000000;
   text-decoration: none;
+}
+
+.cite-navigation-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 .page-wrapper {
   width: 1200px;
   margin: 0 auto;
+
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .intro {
@@ -108,84 +151,124 @@ body {
 }
 
 .reason {
+  padding-top: 73px;
+
   color: #000000;
+
   background-color: #ffffff;
 }
 
+.reason-header {
+  max-width: 720px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.reason-card {
+  display: flex;
+  width: 100%;
+}
+
 .reason-title {
-  color: inherit;
+  margin: 0 0 23px 0;
+
+  font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  font-weight: 700;
-  text-align: center;
+  color: #333333;
   text-transform: uppercase;
 }
 
 .reason-content {
-  color: #333333;
+  margin: 0 0 79px 0;
+
+  font-weight: 400;
   font-size: 22px;
   line-height: 36px;
-  font-weight: 400;
-  text-align: center;
+  color: #333333;
 }
 
 .reason-card-content {
-  background: #83b3d3;
-  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 400px;
   height: 384px;
+  padding: 98px 90px 77px 90px;
+
+  color: #ffffff;
+
+  background-color: #83b3d3;
 }
 
 .reason-card-title {
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
+  margin: 0 0 23px 0;
 }
 
 .reason-card-counter {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+  margin: 0 0 26px 0;
+}
+
+.favorites-block {
+  display: none;
 }
 
 .reason-card-text {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+  margin: 0 auto;
 }
 
-.reason-list-item:nth-child(1),
-.reason-list-item:nth-child(3),
-.reason-list-item:nth-child(4),
-.reason-list-item:nth-child(6) {
+.reason-list {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.reason-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 98px 90px 77px 90px;
+}
+
+.reason-list--top .reason-list-item:nth-child(odd) {
   background: rgba(131, 179, 211, 0.12);
-  color: #333333;
-  width: 400px;
-  height: 384px;
 }
 
-.reason-list-item:nth-child(2) {
+.reason-list--top .reason-list-item:nth-child(even) {
   background: #ffffff;
-  color: #333333;
-  width: 400px;
-  height: 384px;
 }
 
-.reason-list-item:nth-child(5) {
+.reason-list--bottom .reason-list-item:nth-child(odd) {
+  background: rgba(131, 179, 211, 0.12);
+}
+
+.reason-list--bottom .reason-list-item:nth-child(even) {
   background: rgba(131, 179, 211, 0.2);
-  color: #333333;
-  width: 400px;
-  height: 384px;
 }
 
 .reason-list-title {
-  color: #000000;
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  font-weight: 700;
   text-align: center;
+  color: #000000;
   text-transform: uppercase;
 }
 
@@ -196,50 +279,54 @@ body {
 }
 
 .selection-hotel {
-  background: #ffffff;
   width: 1200px;
   height: 417px;
+
+  background: #ffffff;
 }
 
 .selection-hotel-title {
-  color: #000000;
+  font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  font-weight: 700;
   text-align: center;
+  color: #000000;
   text-transform: uppercase;
 }
 
 .selection-hotel-date {
-  color: #333333;
   font-size: 22px;
   line-height: 26px;
   text-align: center;
+  color: #333333;
 }
 
 .selection-hotel-search {
-  background: #756257;
   width: 575px;
   height: 30px;
 
-  color: #ffffff;
   font-size: 20px;
   line-height: 36px;
   text-align: center;
+  color: #ffffff;
   text-transform: uppercase;
+
+  background: #756257;
 }
 
 .subscription {
-  background-image: url("../img/content/background-subscription.jpg");
   width: 1200px;
   height: 411px;
+
   color: #ffffff;
+
+  background-image: url("../img/content/background-subscription.jpg");
 }
 
 .subscription-title {
+  font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
 }
@@ -262,29 +349,32 @@ body {
 }
 
 .main-inner {
-  background: #f2f2f2;
-  color: #333333;
   font-size: 18px;
   line-height: 23px;
+  color: #333333;
+
+  background: #f2f2f2;
 }
 
 .hotel-catalog {
-  background-image: url("../img/content/catalog-background.jpg");
   width: 1200px;
   height: 408px;
+
   color: #ffffff;
+
+  background-image: url("../img/content/catalog-background.jpg");
 }
 
 .hotel-catalog-title {
-  font-size: 60px;
   list-style: 78px;
   font-weight: 700;
+  font-size: 60px;
 }
 
 .catalog-filter-title {
+  font-weight: 700;
   font-size: 20px;
   line-height: 26px;
-  font-weight: 700;
 }
 
 .catalog-filter-option {
@@ -293,27 +383,29 @@ body {
 }
 
 .hotel-card-title {
-  color: #000000;
+  font-weight: 700;
   font-size: 24px;
   line-height: 31px;
-  font-weight: 700;
+  color: #000000;
 }
 
 .hotel-card-rating {
-  color: #333333;
   font-size: 16px;
   line-height: 21px;
   text-align: center;
+  color: #333333;
   text-transform: uppercase;
 }
 
 .hotel-card-link {
-  background-color: #756257;
-  color: #ffffff;
   width: 151px;
   height: 37px;
+
   font-size: 16px;
   line-height: 21px;
   text-align: center;
+  color: #ffffff;
   text-transform: uppercase;
+
+  background-color: #756257;
 }
