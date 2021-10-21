@@ -322,7 +322,9 @@ body {
 .selection-hotel {
   max-width: 100%;
   margin: 0 auto;
+
   text-align: center;
+
   background: #ffffff;
 }
 
@@ -335,21 +337,23 @@ body {
 }
 
 .selection-hotel-title {
+  margin: 0 0 15px 0;
+
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-align: center;
   color: #000000;
   text-transform: uppercase;
-  margin: 0 0 15px 0;
 }
 
 .selection-hotel-date {
+  margin: 0 0 73px 0;
+
   font-size: 22px;
   line-height: 26px;
   text-align: center;
   color: #333333;
-  margin: 0 0 73px 0;
 }
 
 .selection-hotel-search {
@@ -383,25 +387,28 @@ body {
 }
 
 .subscription-title {
+  margin: 0 0 15px 0;
+
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
   text-align: center;
   text-transform: uppercase;
-  margin: 0 0 15px 0;
 }
 
 .subscription-text {
+  margin: 0 0 26px 0;
+
   font-size: 22px;
   line-height: 26px;
   text-align: center;
-  margin: 0 0 26px 0;
 }
 
 .page-footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   background: #ffffff;
 }
 
